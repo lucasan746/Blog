@@ -5,6 +5,9 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Publicacion;
+use App\Puntuacion;
+use App\Comentario;
 
 class User extends Authenticatable
 {
@@ -16,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','rol',
     ];
 
     /**
@@ -36,4 +39,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function publicacion()
+    {
+        return $this->hasMany(Publicacion::class);
+    }
+
+    public function puntuacion()
+    {
+        return $this->hasMany(Puntuacion::class);
+    }
+
+    public function comentario()
+    {
+        return $this->hasMany(Comentario::class);
+    }
 }
