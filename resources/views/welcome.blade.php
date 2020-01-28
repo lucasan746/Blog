@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         @if (Auth::user())
-          <a href="{{route('post')}}" class="btn btn-secondary btn-lg">Crear una Publicación</a>
+          <a href="{{route('post')}}" class="btn btn-secondary btn-lg borrar" >Crear una Publicación</a>
         @endif
         <div class="item mb-5 m-2">
                 @foreach ($pub as $publicacion)

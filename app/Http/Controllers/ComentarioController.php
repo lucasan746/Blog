@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Comentario;
+use Illuminate\Http\Request;
 
 class ComentarioController extends Controller
 {
@@ -14,6 +14,6 @@ class ComentarioController extends Controller
         $comentario->publicacion_id = $form['publicacion_id'];
         $comentario->user_id = $form['user_id'];
         $comentario->save();
-        return redirect('/post/'.$form['publicacion_id']);
+        return redirect('/post/' . $form['publicacion_id']);
     }
 }

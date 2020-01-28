@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Panel de administrador</h4>
+    <hr>
+    <p class="mb-0">Publicaciones sin revisar :</p>
+  </div>
 <div class="item mb-5 m-2">
-    <h1>Panel de administrador</h1>
     <table class="table table-dark">
         <thead>
             <tr>

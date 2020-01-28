@@ -20,10 +20,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+  </div>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm sticky-top">
             <div class="container">
-                <a style="color:white" class="navbar-brand" href="{{ url('/') }}">
+                <a style="color:white" class="navbar-brand" href="{{ url('/home') }}">
                     Blog
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -80,5 +81,11 @@
     <footer class="py-1 bg-dark col-12 position-fixed fixed-bottom">
         <p class=" text-center text-white">Copyright <b>Blog</b> 2020</p>
     </footer>
+    <script
+          src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+          crossorigin="anonymous">
+  </script>
+    <script src="../js/validacion.js" charset="utf-8"></script>
 </body>
 </html>

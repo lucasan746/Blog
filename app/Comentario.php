@@ -2,8 +2,6 @@
 
 namespace App;
 
-use App\User;
-use App\Publicacion;
 use Illuminate\Database\Eloquent\Model;
 
 class Comentario extends Model

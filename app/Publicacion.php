@@ -2,15 +2,12 @@
 
 namespace App;
 
-use App\User;
-use App\Puntuacion;
-use App\Comentario;
 use Illuminate\Database\Eloquent\Model;
 
 class Publicacion extends Model
 {
-    public $table='publicaciones';
-    public $guarded=[];
+    public $table = 'publicaciones';
+    public $guarded = [];
 
     public function user()
     {
