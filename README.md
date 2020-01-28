@@ -4,7 +4,9 @@
 ### Instalación 🔧
 
 _Descargar proyecto_
-
+```
+git clone https://github.com/lucasan746/Blog.git 
+```
 _Ejecutar dentro de la carpeta:_
 
 ```
@@ -23,7 +25,7 @@ php artisan storage:link
 ```
 _Para un mejor funcionamiento ejecutar seeders_
 ```
-php artisan db::seed
+php artisan db:seed
 ```
 
 _Importar base de datos y configurar en .env._
