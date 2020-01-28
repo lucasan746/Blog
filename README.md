@@ -32,6 +32,10 @@ _Importar base de datos y configurar en .env._
 
 _Listo._
 
+_Para acceder al panel de administrador:_
+_email = admin@admin.com_
+_contraseña = password_
+
 ## Construido con 🛠️
 
 
