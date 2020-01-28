@@ -20,7 +20,8 @@
                         <form class="m-2" action="/borrar" method="post" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="id" value="{{$pub->id}}">
-                            <button onclick="return borrar()" type="submit" class="btn btn-secondary btn-sm active" role="button"
+                            <button onclick="return borrar()" type="submit" class="btn btn-secondary btn-sm active"
+                                    role="button"
                                     aria-pressed="true">Borrar
                             </button>
                         </form>
@@ -36,12 +37,14 @@
                             <form class="m-1" action="/edit" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="id" value="{{$pub->id}}">
-                            <button href="/edit" type="buttom" class="btn btn-primary btn-sm">Editar</button>
+                                <button href="/edit" type="buttom" class="btn btn-primary btn-sm">Editar</button>
                             </form>
-                            <form class="m-1" action="/borrar" method="post" enctype="multipart/form-data"  id="borrar">
+                            <form class="m-1" action="/borrar" method="post" enctype="multipart/form-data" id="borrar">
                                 @csrf
                                 <input type="hidden" name="id" value="{{$pub->id}}">
-                                <button  type="submit" class="btn btn-secondary btn-sm" onclick="return borrar()">Borrar</button>
+                                <button type="submit" class="btn btn-secondary btn-sm" onclick="return borrar()">
+                                    Borrar
+                                </button>
                             </form>
                         </div>
 
@@ -49,52 +52,52 @@
                     <hr>
                     <h1 class="mt-4">{{$pub->titulo}}</h1>
                     @if (Auth::user())
-                      @if ($pub->user_id==Auth::user()->id)
-                        <p class="lead">Por ti</a>
-                      @else
+                        @if ($pub->user_id==Auth::user()->id)
+                            <p class="lead">Por ti</a>
+                        @else
+                            <p class="lead">Por <a href="#">{{$pub->user->name}}</a>
+
+                        @endif
+                    @else
                         <p class="lead">Por <a href="#">{{$pub->user->name}}</a>
 
-                      @endif
-                      @else
-                      <p class="lead">Por <a href="#">{{$pub->user->name}}</a>
-
-                    @endif
-                    </p>
-                    <hr>
-                    <p>Publicado el {{$pub->updated_at}}</p>
-                    <hr>
-                    <img class="img-fluid rounded" src="/storage/{{$pub->img}}" width="700" height="300">
-                    <hr>
-                    <p class="lead">{{$pub->texto}}</p>
-                    <hr>
-                    <div class="card my-4">
-                        <h5 class="card-header">Dejar un comentario:</h5>
-                        <div class="card-body">
-                            @if (Auth::user())
-                                <form class="" action="/comentario" method="post" enctype="multipart/form-data">
-                                    @csrf
-                                    <div class="form-group">
-                                        <textarea name="comentario" class="form-control" rows="3"></textarea>
-                                    </div>
-                                    <input type="hidden" name="publicacion_id" value="{{$pub->id}}">
-                                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                                    <button type="submit" class="btn btn-primary">Comentar</button>
-                                </form>
-                            @else
-                                <h4 class="alert alert-warning">Debe estar registrado para comentar</h4>
                             @endif
-                        </div>
-                    </div>
-
-                    @foreach ($pub->comentario as $comentario)
-                        <div class="media mb-4">
-                            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                            <div class="media-body">
-                                <h5 class="mt-0">{{$comentario->user->name}}</h5>
-                                {{$comentario->comentario}}
+                        </p>
+                        <hr>
+                        <p>Publicado el {{$pub->updated_at}}</p>
+                        <hr>
+                        <img class="img-fluid rounded" src="/storage/{{$pub->img}}" width="700" height="300">
+                        <hr>
+                        <p class="lead">{{$pub->texto}}</p>
+                        <hr>
+                        <div class="card my-4">
+                            <h5 class="card-header">Dejar un comentario:</h5>
+                            <div class="card-body">
+                                @if (Auth::user())
+                                    <form class="" action="/comentario" method="post" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="form-group">
+                                            <textarea name="comentario" class="form-control" rows="3"></textarea>
+                                        </div>
+                                        <input type="hidden" name="publicacion_id" value="{{$pub->id}}">
+                                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                                        <button type="submit" class="btn btn-primary">Comentar</button>
+                                    </form>
+                                @else
+                                    <h4 class="alert alert-warning">Debe estar registrado para comentar</h4>
+                                @endif
                             </div>
                         </div>
-                    @endforeach
+
+                        @foreach ($pub->comentario as $comentario)
+                            <div class="media mb-4">
+                                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                                <div class="media-body">
+                                    <h5 class="mt-0">{{$comentario->user->name}}</h5>
+                                    {{$comentario->comentario}}
+                                </div>
+                            </div>
+                        @endforeach
                 </div>
                 <div class="col-md-4">
                     <div class="card my-4">

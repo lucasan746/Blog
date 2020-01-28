@@ -24,4 +24,4 @@ Route::post('/revision', 'PublicacionController@revision');
 
 Route::post('/comentario', 'ComentarioController@agregarComentario');
 
-Route::post('/edit','PublicacionController@editar');
+Route::post('/edit', 'PublicacionController@editar');

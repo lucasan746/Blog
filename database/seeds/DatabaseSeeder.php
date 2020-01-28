@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         factory(App\User::class, 30)->create();
         factory(App\Publicacion::class, 30)->create();
+        factory(App\Comentario::class, 30)->create();
     }
 }

@@ -28,6 +28,11 @@ class PublicacionController extends Controller
 
     public function agregarPublicacion(request $form)
     {
+        $this->validate($form, [
+            'titulo' => 'required',
+            'texto' => 'required',
+            'img' => 'required|file|image',
+        ]);
         $ruta = $form->file('img')->store('public');
         $image = basename($ruta);
         $newPub = new Publicacion();
