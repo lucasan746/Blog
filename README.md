@@ -4,7 +4,9 @@
 ### Instalación 🔧
 
 _Descargar proyecto_
-
+```
+git clone https://github.com/lucasan746/Blog.git 
+```
 _Ejecutar dentro de la carpeta:_
 
 ```
